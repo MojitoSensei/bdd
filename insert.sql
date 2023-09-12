@@ -10,10 +10,7 @@ VALUES
   (8, 'La guerre des étoiles : L empire contre-attaque', 'Science-Fiction', 1980, 124, 18000000),
   (9, 'Le Seigneur des anneaux : La Communauté de l anneau', 'Fantasy', 2001, 178, 93000000),
   (10, 'Le Seigneur des anneaux : Les Deux Tours', 'Fantasy', 2002, 179, 94000000),
-  (11, 'Le Seigneur des anneaux : Le Retour du roi', 'Fantasy', 2003, 201, 94000000),
-  (12, 'Barbie', 'Aventure', 2023, 115, 145000000),
-  (13, 'Oppenheimer', 'Biographie', 2023, 180, 100000000);
-  
+  (11, 'Le Seigneur des anneaux : Le Retour du roi', 'Fantasy', 2003, 201, 94000000);
 
 INSERT INTO Recompenses (numRecomp, categorie, festival)
 VALUES
@@ -21,22 +18,18 @@ VALUES
   (2, 'Meilleur Acteur', 'Oscars'),
   (3, 'Meilleur Réalisateur', 'Cannes'),
   (4, 'Meilleur Scénario', 'BAFTA'),
-  (5, 'Meilleure Musique Originale', 'Golden Globes'),
-  (6, 'Meilleur Film', 'Cannes');
+  (5, 'Meilleure Musique Originale', 'Golden Globes');
 
 INSERT INTO Acteurs (numAct, nomAct, prenomAct, dateNaissAct, nationaliteAct, taille, specialite)
 VALUES
-  (1, 'DiCaprio', 'Leonardo', '1974-11-11', 'Américaine', 183, 'Acteur Principal'),
+  (1, 'DiCaprio', 'Leonardo', '1974-11-11', 'Américaine', 183, 'Narration'),
   (2, 'Freeman', 'Morgan', '1937-06-01', 'Américaine', 188, 'Narration'),
   (3, 'Weaver', 'Sigourney', '1949-10-08', 'Américaine', 182, 'Science Fiction'),
   (4, 'Travolta', 'John', '1954-02-18', 'Américaine', 188, 'Dancing'),
-  (5, 'Neill', 'Sam', '1947-09-14', 'Néo-zélandaise', 183, 'Aventure'),
-  (6, 'Harrison', 'Ford', '1942-07-13', 'Américaine', 185, 'Acteur Principal'),
-  (7, 'Thénardier', 'Sacha', '1981-01-25', 'Française', 175, 'Acteur Principal'),
-  (8, 'Robert', 'Hossein', '1927-12-30', 'Française', 175, 'réalisateur/second rôle'),
-  (9, 'Jejouedans', 'Laguerredesatoiles', '1987-12-26', 'Française', 190, 'etrela'),
-  (10, 'Gosling', 'Ryan', '1980-11-12', 'Canadienne', 184, 'Acteur Principal'),
-  (11, 'Murphy', 'Cillian', '1976-05-25', 'Irlandaise', 175, 'Acteur Principal');
+  (5, 'Neill', 'Sam', '1947-09-14', 'Néo-zélandaise', 183, 'Comique'),
+  (6, 'Harrison', 'Ford', '1942-07-13', 'Américaine', 185, 'Aventure'),
+  (7, 'Thénardier', 'Sacha', '1981-01-25', 'Française', 175, 'Dramatique'),
+  (8, 'Robert', 'Hossein', '1927-12-30', 'française', 175, 'réalisateur/second rôle');
 
 INSERT INTO Realisateurs (numReal, nomReal, prenomReal, dateNaissReal, nationaliteReal)
 VALUES
@@ -47,42 +40,37 @@ VALUES
   (5, 'Spielberg', 'Steven', '1946-12-18', 'Américaine'),
   (6, 'Lucas', 'George', '1944-05-14', 'Américaine'),
   (7, 'Robert', 'Hossein', '1927-12-30', 'française'),
-  (8, 'Jackson', 'Peter', '1961-10-31', 'Néo-Zélandais'),
-  (10, 'Nolan', 'Christopher', '1970-07-30', 'Britinique'),
-  (11, 'Gerwin', 'Greta', '1983-08-04', 'Américaine');
+  (8, 'Jackson', 'Peter', '1961-10-31', 'Néo-Zélandais');
   
-INSERT INTO Salles (numS, tailleEcran, nbrPlaces, audio)
+
+
+
+INSERT INTO Cinemas (numCine, nomCine, adrCine, villeCine, telCine, compagnie)
 VALUES
-  (1, 20, 150, 'Dolby Digital'),
-  (2, 80, 200, 'DTS'),
-  (3, 180, 100, 'Stereo'),
-  (4, 40, 250, 'Dolby Atmos'),
-  (5, 20, 180, 'Surround');
+  (1, 'Netflux', '123 Rue Principale', 'Nouille Orc', '123-456-7890', 'Nootflox'),
+  (2, 'Cinémoa', '456 Avenue Centrale', 'Taumatawhakatangihangakoauauotamateaturipukakapiki-maungahoronukupokaiwhenuakitnatahu', '987-654-3210', 'CinéDuNom'),
+  (3, 'Cinécity', '789 Rue Étoilée', 'Nouméa', '555-555-5555', 'Cinécity'),
+  (4, 'VenezRegarder', '101 Old Street', 'Ouegoa', '111-222-3333', 'Nollywood'),
+  (5, 'UnlimitedMovies', '555 Action Avenue', 'Bloxcity', '777-888-9999', 'Fox');
 
-
-INSERT INTO Cinemas (numCine, nomCine, adrCine, villeCine, telCine, compagnie, numS)
+INSERT INTO Salles (numS, tailleEcran, nbrPlaces, audio, numCine)
 VALUES
-  (1, 'Netflux', '123 Rue Principale', 'Nouille Orc', '123-456-7890', 'Nootflox', 1),
-  (2, 'Cinémoa', '456 Avenue Centrale', 'Taumatawhakatangihangakoauauotamateaturipukakapiki-maungahoronukupokaiwhenuakitnatahu', '987-654-3210', 'CinéDuNom', 2),
-  (3, 'Cinécity', '789 Rue Étoilée', 'Nouméa', '555-555-5555', 'Cinécity', 3),
-  (4, 'VenezRegarder', '101 Old Street', 'Ouegoa', '111-222-3333', 'Nollywood', 4),
-  (5, 'UnlimitedMovies', '555 Action Avenue', 'Bloxcity', '777-888-9999', 'Fox', 5),
-  (6, 'jepasserien', 'nulpar', 'somewhereovertherainbow', '118712', 'boring_compagnie', 5);
-
+  (1, 20, 150, 'Dolby Digital', 1),
+  (2, 80, 200, 'DTS', 2),
+  (3, 180, 100, 'Stereo', 3),
+  (4, 40, 250, 'Dolby Atmos', 4),
+  (5, 20, 180, 'Surround', 5);
 
 INSERT INTO Joue_dans (numF, numAct, rôle, salaireAct)
 VALUES
   (1, 1, 'Cobb', 2000000),
-  (2, 2, 'Red', 1500000),
+  (2, 2, 'Red', 3500000),
   (3, 3, 'Neytiri', 3000000),
   (4, 4, 'Vincent Vega', 1800000),
   (5, 5, 'Dr. Alan Grant', 2200000),
   (6, 6, 'Han Solo', 2500000),
   (7, 7, 'Gavroche', 100000),
-  (7, 8, 'figurant', 200000),
-  (6, 9, 'ilestlaaumoins', 200000),
-  (12, 10, 'Ken', 2300000),
-  (13, 11, 'Oppenheimer', 24000000);
+  (7, 8, 'figurant', 200000);
 
 INSERT INTO Film_a_recu (numF, numRecomp, annee)
 VALUES
@@ -94,8 +82,7 @@ VALUES
   (6, 1, 1978),
   (7, 1, 1997),
   (7, 2, 1997),
-  (7, 3, 1997),
-  (12, 6, 2023);
+  (7, 3, 1997);
 
 INSERT INTO Acteur_a_recu (numRecomp, numAct, annee)
 VALUES
@@ -119,16 +106,14 @@ VALUES
   (8, 6, 2000000),
   (9, 8, 10000000),
   (10, 8, 10000000),
-  (11, 8, 10000000),
-  (12, 11, 89000000),
-  (13, 10, 89000001);
+  (11, 8, 10000000);
 
 
 INSERT INTO Passe_dans (numF, numS, numCine, dateDeb, dateFin, horaires, prix, typeSceance)
 VALUES
-  (1, 1, 1, '2023-08-25', '2023-08-31', '18:00, 20:30', 1500, '2D'),
-  (2, 2, 2, '2023-08-26', '2023-09-01', '19:15, 21:45', 1200, '2D'),
-  (3, 3, 3, '2023-08-27', '2023-09-02', '20:00, 22:30', 1200, '3D'),
-  (4, 4, 4, '2023-08-28', '2023-09-03', '17:30, 20:00', 1350, '2D'),
-  (5, 5, 5, '2023-08-29', '2023-09-04', '16:45, 19:15', 8435, '4D'),
-  (6, 6, 6, '2023-09-01', '2023-09-07', '16:00, 18:30', 1800, '3D');
+  (1, 1, 1, '2023-08-25', '2023-08-31', '18:00:00', 1500, '2D'),
+  (2, 2, 2, '2023-08-26', '2023-09-01', '19:00:00', 1200, '2D'),
+  (3, 3, 3, '2023-08-27', '2023-09-02', '20:00:00', 1200, '3D'),
+  (4, 4, 4, '2023-08-28', '2023-09-03', '17:30:00', 1350, '2D'),
+  (5, 5, 5, '2023-08-29', '2023-09-04', '16:45:00', 8435, '4D'),
+  (6, 6, 6, '2023-09-01', '2023-09-07', '16:00:00', 1800, '3D');
