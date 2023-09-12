@@ -1,7 +1,6 @@
 /* creation du schema */
 drop database if exists `cinemas`;
 create database cinemas;
-use cinemas;
 
 
 /* créations des tables */
@@ -47,7 +46,6 @@ create table realisateurs
     primary key(numReal)
 );
 
-
 create table cinemas
 (
 	numCine int,
@@ -65,10 +63,11 @@ create table salles
     tailleEcran int,
     nbrPlaces int,
     audio varchar(15),
-    numCine int,
     primary key(numS),
+    numCine int,
     foreign key(numCine) references cinemas(numCine)
 );
+
 
 create table joue_dans
 (
@@ -118,10 +117,8 @@ create table passe_dans
     numCine int,
     dateDeb date,
     dateFin date,
-    horaires time,
+    horaires varchar(30),
     prix int,
     typeSceance varchar(2),
     primary key(numF,numS,numCine)
 );
-
-    
