@@ -117,8 +117,10 @@ create table passe_dans
     numCine int,
     dateDeb date,
     dateFin date,
-    horaires varchar(30),
+    horaires time,
     prix int,
     typeSceance varchar(2),
     primary key(numF,numS,numCine)
 );
+
+    
