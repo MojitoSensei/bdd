@@ -38,7 +38,9 @@ VALUES
   (9, 'Jejouedans', 'Laguerredesatoiles', '1987-12-26', 'Française', 190, 'etrela'),
   (10, 'Gosling', 'Ryan', '1980-11-12', 'Canadienne', 184, 'Acteur Principal'),
   (11, 'Murphy', 'Cillian', '1976-05-25', 'Irlandaise', 175, 'Acteur Principal'),
-  (12, 'Willis', 'Bruce', '1955-03-19', 'Américaine', 183, 'Action');
+  (12, 'Willis', 'Bruce', '1955-03-19', 'Américaine', 183, 'Action'),
+  (13, 'Wood', 'Elijah', '1985-05-20', 'Américaine', 155, 'Acteur Principal'),
+  (14, 'Bloom', 'Orlando', '1840-06-30' , 'Américaine', 180, 'seconde rôle');
 
 INSERT INTO Realisateurs (numReal, nomReal, prenomReal, dateNaissReal, nationaliteReal)
 VALUES
@@ -62,7 +64,8 @@ VALUES
   (3, 'Cinécity', '789 Rue Étoilée', 'Nouméa', '555-555-5555', 'Cinécity'),
   (4, 'VenezRegarder', '101 Old Street', 'Ouegoa', '111-222-3333', 'Nollywood'),
   (5, 'UnlimitedMovies', '555 Action Avenue', 'Bloxcity', '777-888-9999', 'Fox'),
-  (6, 'jepasserien', 'nulpar', 'somewhereovertherainbow', '118712', 'boring_compagnie');
+  (6, 'jepasserien', 'nulpar', 'somewhereovertherainbow', '118712', 'boring_compagnie'),
+  (7, "LeCineDeN-Y", "3rd street of the communist", "New-York", "212-421-3600", "Fox");
 
   
 INSERT INTO Salles (numS, tailleEcran, nbrPlaces, audio, numCine)
@@ -84,6 +87,10 @@ VALUES
   (7, 7, 'Gavroche', 100000),
   (7, 8, 'figurant', 200000),
   (6, 9, 'ilestlaaumoins', 200000),
+  (9, 13, 'Frodon', 200000),
+  (10, 13, 'Frodon', 205500),
+  (10, 14, 'Legolas', 400000),
+  (11, 13, 'Frodon', 500000),
   (12, 10, 'Ken', 2300000),
   (13, 11, 'Oppenheimer', 24000000),
   (14, 12, 'Korben Dallas', 10000000);
@@ -125,7 +132,8 @@ VALUES
   (10, 8, 10000000),
   (11, 8, 10000000),
   (12, 11, 89000000),
-  (13, 10, 89000001);
+  (13, 10, 89000001),
+  (14, 12, 7000000);
 
 
 INSERT INTO Passe_dans (numF, numS, numCine, dateDeb, dateFin, horaires, prix, typeSceance)
@@ -135,4 +143,5 @@ VALUES
   (3, 3, 3, '2023-08-27', '2023-09-02', '20:00:00', 1200, '3D'),
   (4, 4, 4, '2023-08-28', '2023-09-03', '17:30:00', 1350, '2D'),
   (5, 5, 5, '2023-08-29', '2023-09-04', '16:45:00', 8435, '4D'),
-  (6, 6, 6, '2023-09-01', '2023-09-07', '16:00:30', 1800, '3D');
+  (6, 6, 6, '2023-09-01', '2023-09-07', '16:00:30', 1800, '3D'),
+  (9, 4, 7, '2023-02-14', '2023-04-22', '17:00:00', 2000, '3D');
