@@ -12,7 +12,8 @@ VALUES
   (10, 'Le Seigneur des anneaux : Les Deux Tours', 'Fantasy', 2002, 179, 94000000),
   (11, 'Le Seigneur des anneaux : Le Retour du roi', 'Fantasy', 2003, 201, 94000000),
   (12, 'Barbie', 'Aventure', 2023, 115, 145000000),
-  (13, 'Oppenheimer', 'Biographie', 2023, 180, 100000000);
+  (13, 'Oppenheimer', 'Biographie', 2023, 180, 100000000),
+  (14, 'Le Cinquième Élément', 'Science-Fiction', 1997, 126, 93000000);
   
 
 INSERT INTO Recompenses (numRecomp, categorie, festival)
@@ -36,7 +37,8 @@ VALUES
   (8, 'Robert', 'Hossein', '1927-12-30', 'Française', 175, 'réalisateur/second rôle'),
   (9, 'Jejouedans', 'Laguerredesatoiles', '1987-12-26', 'Française', 190, 'etrela'),
   (10, 'Gosling', 'Ryan', '1980-11-12', 'Canadienne', 184, 'Acteur Principal'),
-  (11, 'Murphy', 'Cillian', '1976-05-25', 'Irlandaise', 175, 'Acteur Principal');
+  (11, 'Murphy', 'Cillian', '1976-05-25', 'Irlandaise', 175, 'Acteur Principal'),
+  (12, 'Willis', 'Bruce', '1955-03-19', 'Américaine', 183, 'Action');
 
 INSERT INTO Realisateurs (numReal, nomReal, prenomReal, dateNaissReal, nationaliteReal)
 VALUES
@@ -49,7 +51,8 @@ VALUES
   (7, 'Robert', 'Hossein', '1927-12-30', 'française'),
   (8, 'Jackson', 'Peter', '1961-10-31', 'Néo-Zélandais'),
   (10, 'Nolan', 'Christopher', '1970-07-30', 'Britinique'),
-  (11, 'Gerwin', 'Greta', '1983-08-04', 'Américaine');
+  (11, 'Gerwin', 'Greta', '1983-08-04', 'Américaine'),
+  (12, 'Besson', 'Luc', '1959-03-18', 'Française');
 
 
 INSERT INTO Cinemas (numCine, nomCine, adrCine, villeCine, telCine, compagnie)
@@ -82,7 +85,8 @@ VALUES
   (7, 8, 'figurant', 200000),
   (6, 9, 'ilestlaaumoins', 200000),
   (12, 10, 'Ken', 2300000),
-  (13, 11, 'Oppenheimer', 24000000);
+  (13, 11, 'Oppenheimer', 24000000),
+  (14, 12, 'Korben Dallas', 10000000);
 
 INSERT INTO Film_a_recu (numF, numRecomp, annee)
 VALUES
@@ -105,7 +109,7 @@ VALUES
   (4, 4, 1995),
   (5, 5, 1994),
   (1, 6, 1980),
-  (1, 7, 2024);
+  (1, 7, 2023);
 
 INSERT INTO Realise_par (numF, numReal, salaireReal)
 VALUES
