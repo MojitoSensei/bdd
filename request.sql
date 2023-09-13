@@ -134,40 +134,40 @@ natural join salles
 where salles.tailleEcran > 40;
 
 /* 19. Donner le nom des cinémas passant tous les films primés cette année au festival de Cannes. */
-SELECT DISTINCT c.nomCine
-FROM cinemas c
-WHERE NOT EXISTS (
-  SELECT f.numF
-  FROM film_a_recu f
-  WHERE f.annee = '2023' AND f.numRecomp NOT IN (
-    SELECT r.numRecomp
-    FROM recompenses r
-    WHERE r.festival = 'Cannes'
-  )
-  AND NOT EXISTS (
-    SELECT pd.numF
-    FROM passe_dans pd
-    WHERE pd.numCine = c.numCine AND pd.numF = f.numF
-  )
-);
+select c.nomCine
+from cinemas c
+natural join passe_dans 
+natural join film_a_recu
+natural join recompenses
+where recompenses.festival = 'Cannes'
+and film_a_recu.annee = 2023
+group by c.numCine
+having count(*) = (
+	select count(*)
+    from film_a_recu
+    natural join recompenses 
+    where recompenses.festival = 'Cannes'
+    and annee = 2023
+	);
 
 
 
 /* 20. Quels sont les cinémas new-yorkais de la Fox qui passent un film de Peter Jackson avant 22 heures dans une salle d’au moins 200 places et un écran de taille supérieure à 30 mètres carrés (donner aussi le nom des films correspondant). */
-select nomCine, films.titre 
-from cinemas 
-natural join passe_dans 
-natural join salles 
-natural join films 
-natural join realise_par 
-natural join realisateurs 
-where villeCine = "New-York" 
-and compagnie = "Fox" 
-and realisateurs.nomReal = "Jackson" 
-and realisateurs.prenomReal = "Peter" 
-and salles.nbrPlaces >= 200 
-and salles.tailleEcran > 30
-and passe_dans.horaires < "22:00:00";
+SELECT C.nomCine, F.titre AS TitreFilm
+FROM cinemas C
+JOIN passe_dans PD ON C.numCine = PD.numCine
+JOIN films F ON PD.numF = F.numF
+JOIN realise_par RP ON F.numF = RP.numF
+JOIN realisateurs R ON RP.numReal = R.numReal
+JOIN salles S ON PD.numS = S.numS
+WHERE C.villeCine = 'New-York'
+  AND C.compagnie = 'Fox'
+  AND R.nomReal = 'Jackson'
+  AND R.prenomReal = 'Peter'
+  AND PD.horaires < '22:00:00'
+  AND S.nbrPlaces >= 200
+  AND S.tailleEcran > 30;
+  
 
 /* 21. Donner le nombre de films sortis en 1980 par genre. */
 select genre, count(titre) as nombre_film 
@@ -233,9 +233,16 @@ AND JD.salaireAct = (
 );
 
 
-
-
 /* 26. Donner le titre des films qui ont été primés au moins une fois (en comptant aussi les récompenses des acteurs jouant dans le film). */
+SELECT DISTINCT F.titre AS TitreDuFilm
+FROM films F
+LEFT JOIN film_a_recu ON F.numF = film_a_recu.numF
+LEFT JOIN acteur_a_recu ON film_a_recu.numRecomp = acteur_a_recu.numRecomp
+WHERE film_a_recu.numRecomp IS NOT NULL OR acteur_a_recu.numRecomp IS NOT NULL;
 
 
 /* 27. Donner le prix moyen des films passant dans des salles en 3D (cf. typeSeance dans l’association passe dans). */
+select avg(P.prix) as PrixMoyen
+from passe_dans P
+natural join salles
+where P.typeSceance = '3D';
