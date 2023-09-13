@@ -122,5 +122,3 @@ create table passe_dans
     typeSceance varchar(2),
     primary key(numF,numS,numCine)
 );
-
-    
