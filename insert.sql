@@ -65,7 +65,8 @@ VALUES
   (4, 'VenezRegarder', '101 Old Street', 'Ouegoa', '111-222-3333', 'Nollywood'),
   (5, 'UnlimitedMovies', '555 Action Avenue', 'Bloxcity', '777-888-9999', 'Fox'),
   (6, 'jepasserien', 'nulpar', 'somewhereovertherainbow', '118712', 'boring_compagnie'),
-  (7, "LeCineDeN-Y", "3rd street of the communist", "New-York", "212-421-3600", "Fox");
+  (7, "LeCineDeN-Y", "3rd street of the communist", "New-York", "212-421-3600", "Fox"),
+  (8, "PrimedCINECITY", "Primedroad", "Primed-City", "122-378-4890", "RobuxForLife");
 
   
 INSERT INTO Salles (numS, tailleEcran, nbrPlaces, audio, numCine)
@@ -144,4 +145,5 @@ VALUES
   (4, 4, 4, '2023-08-28', '2023-09-03', '17:30:00', 1350, '2D'),
   (5, 5, 5, '2023-08-29', '2023-09-04', '16:45:00', 8435, '4D'),
   (6, 6, 6, '2023-09-01', '2023-09-07', '16:00:30', 1800, '3D'),
-  (9, 4, 7, '2023-02-14', '2023-04-22', '17:00:00', 2000, '3D');
+  (9, 4, 7, '2023-02-14', '2023-04-22', '17:00:00', 2000, '3D'),
+  (12, 3, 8, '2023-02-14', '2023-04-22', '17:00:00', 2000, '3D');
