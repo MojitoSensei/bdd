@@ -3,20 +3,6 @@ UPDATE films
 SET titre = 'FastAndFurious'
 WHERE numF = 3;
 
-/*2 ce delete vas supprimer le film numero 5 que d'autres update utilisent, pour éviter tout problèmes d'update il doit etre éxécuté séparément des autres / un nouvel insert de la base de données est nécessaire après son éxécution */
-delete
-from realise_par
-where numF = 5;
-delete
-from film_a_recu  
-where numF = 5;
-delete
-from joue_dans 
-where numF = 5;
-delete 
-from films 
-where numF = 5;
-
 /*3*/
 update joue_dans
 set numF = 5
@@ -183,58 +169,16 @@ where numF = 9
 and numS = 4 
 and numCine = 7;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*2 ce delete vas supprimer le film numero 5 que d'autres update utilisent, pour éviter tout problèmes d'update il doit etre éxécuté séparément des autres / un nouvel insert de la base de données est nécessaire après son éxécution */
+delete
+from realise_par
+where numF = 5;
+delete
+from film_a_recu  
+where numF = 5;
+delete
+from joue_dans 
+where numF = 5;
+delete 
+from films 
+where numF = 5;
